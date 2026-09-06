@@ -1,0 +1,15 @@
+# Obsidian — קבצי מצב מקומיים, לא תוכן
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# מערכת
+.DS_Store
+Thumbs.db
+
+# סודות — לעולם לא בריפו
+.env
+*.key
+*.pem
+secrets/
