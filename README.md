@@ -1,3 +1,24 @@
+# personal-agent-starter
+
+**A file-based personal agent: one folder that is both an Obsidian vault and an agent workspace.**
+Markdown files only — no database, no cloud service, no vendor lock-in. The agent reads and writes
+the notes, you see the same files in Obsidian, and git keeps the history. Six slash commands cover
+the whole day: `/morning`, `/capture`, `/task`, `/prep`, `/close`, `/weekly`.
+
+Built for a workshop on 6 September 2026 and handed to the participants as-is; the guide below is
+in Hebrew because that was the room. Setup is ten minutes — clone, `bash scripts/setup.sh`, open the
+folder in both tools, say `/morning`.
+
+Two design choices worth naming. **Memory is layered by lifetime, not by topic** — raw signals in
+`04-memory/observations.md` are consumed into `playbook.md` only once a pattern has repeated three
+times, so the agent's long-term memory cannot fill with noise. And **a hook guards the shell**:
+`scripts/guard.sh` blocks `rm -rf` and friends before they run, because an agent with write access to
+your notes is exactly the thing that should not be trusted with an unreviewed delete.
+
+MIT licensed. Works with Antigravity; the `AGENTS.md` contract is portable to any agent that reads one.
+
+---
+
 # personal-agent-starter — סוכן אישי עם זיכרון, על Antigravity ו-Obsidian
 
 תיקייה אחת שהיא גם **כספת Obsidian** וגם **סביבת עבודה של Antigravity**.
@@ -100,5 +121,4 @@ gh repo create my-agent --private --source=. --push
 ## מה הלאה
 
 - **COG-second-brain** (‏`huytieu/COG-second-brain`) — אותו רעיון, מוכן ועשיר: 33 סקילים, תדריך יומי מהחדשות, ‏CRM אנשים, ‏Git ו-iCloud. כשתרגישו שהערכה הזאת קטנה עליכם.
-- **dev-loop** (‏`yosishe/dev-loop`) — השכבה ההנדסית: משימות כ-Issues, ‏PR לכל שינוי, שערי בדיקה, רטרו אחרי כל מיזוג. למי שרוצה סוכן שמפתח, לא רק זוכר.
 - **מדריך הסוכן שקיבלתם** — למה כל קובץ נמצא איפה שהוא.
