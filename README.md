@@ -111,9 +111,10 @@ bash scripts/setup.sh
 ## גיבוי ל-GitHub (5 דקות, מומלץ)
 
 ```bash
-gh repo create my-agent --private --source=. --push
+gh repo create my-agent --private --source=. --remote=backup
+git push --set-upstream backup HEAD
 ```
-או ב-Obsidian: תוסף **Obsidian Git** ← „Edit remotes" ← „Push". פירוט במדריך ה-Obsidian שקיבלתם.
+הפקודות מגדירות את המאגר הפרטי כיעד הדחיפה של הענף הנוכחי, גם אם שכפלתם את התבנית הציבורית. לפני גיבוי נוסף שמרו את השינויים בקומיט. אפשר לדחוף אותו גם דרך התוסף **Obsidian Git**.
 **ריפו פרטי בלבד.** הזיכרון הזה הוא אתם.
 
 ---
